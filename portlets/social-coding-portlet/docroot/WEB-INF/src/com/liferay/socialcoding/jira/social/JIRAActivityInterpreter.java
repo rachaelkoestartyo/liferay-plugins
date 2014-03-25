@@ -85,9 +85,10 @@ public class JIRAActivityInterpreter extends BaseSocialActivityInterpreter {
 			SocialActivity activity, ServiceContext serviceContext)
 		throws Exception {
 
-		StringBundler sb = new StringBundler(4);
+		StringBundler sb = new StringBundler(5);
 
-		sb.append("http://support.liferay.com/browse/");
+		sb.append(PortletPropsValues.JIRA_URL);
+		sb.append("/browse/");
 
 		JIRAIssue jiraIssue = JIRAIssueLocalServiceUtil.getJIRAIssue(
 			activity.getClassPK());
